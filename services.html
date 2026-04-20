@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги и цены — SAURA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="services-hero">
+        <nav class="navbar">
+            <div class="logo">SAURA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">ГЛАВНАЯ</a></li>
+                <li><a href="services.html" style="color: var(--gold);">УСЛУГИ И ЦЕНЫ</a></li>
+                <li><a href="gallery.html">ФОТОГАЛЕРЕЯ</a></li>
+                <li><a href="booking.html" style="color: var(--gold);">БРОНИРОВАНИЕ</a></li>
+                <li><a href="dev.html">DEV</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleModal(true)">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+
+        <h1>УСЛУГИ<br>И ЦЕНЫ</h1>
+        <div></div> <!-- Spacer -->
+    </header>
+
+    <section class="service-list">
+        <div class="service-item">
+            <div class="bg-text">САУНА</div>
+            <div class="content">
+                <h2>САУНА</h2>
+                <p>Просторная финская парная, купель и душ</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="bg-text">Комнаты отдыха</div>
+            <div class="content">
+                <h2>КОМНАТЫ ОТДЫХА</h2>
+                <p>Уютные комнаты с мягкой мебелью для отдыха</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="bg-text">МАССАЖ</div>
+            <div class="content">
+                <h2>МАССАЖ</h2>
+                <p>Расслабляющие и оздоровительные процедуры</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="prices-section">
+        <div class="prices-container">
+            <h2 class="prices-title">ЦЕНЫ</h2>
+            <div class="prices-grid">
+                <div class="price-item">
+                    <span class="label">Аренда сауны (1 час)</span>
+                    <span class="value">1500 руб.</span>
+                </div>
+                <div class="price-item">
+                    <span class="label">Аренда сауны (2 часа)</span>
+                    <span class="value">2800 руб.</span>
+                </div>
+                <div class="price-item">
+                    <span class="label">Массаж (30 минут)</span>
+                    <span class="value">2000 руб.</span>
+                </div>
+                <div class="price-item">
+                    <span class="label">Аренда полотенца</span>
+                    <span class="value">200 руб.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <div class="modal-overlay" id="contacts-modal" onclick="if(event.target === this) toggleModal(false)">
+        <div class="modal-container">
+            <button class="modal-close" onclick="toggleModal(false)">&times;</button>
+            <div class="modal-header">
+                <h2>CONTACTS</h2>
+            </div>
+            <div class="modal-info">
+                <div class="info-item">
+                    <h3>Адрес</h3>
+                    <p>г. Архангельск, ул. Урицкого, 54, корп. 2, этаж цокольный</p>
+                </div>
+                <div class="info-item">
+                    <h3>Телефон</h3>
+                    <p>+7 (8182) 44-55-66</p>
+                </div>
+                <div class="info-item">
+                    <h3>Режим работы</h3>
+                    <p>24/7 (Круглосуточно)</p>
+                </div>
+                <div class="info-item">
+                    <h3>Соцсети</h3>
+                    <p>VK: @saura_arh<br>TG: @saura_bot</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <p class="copyright">© 2026 SAURA. Все права защищены</p>
+        </div>
+        <div class="footer-main">
+            <img src="footer.png" class="footer-leaf" alt="Decoration">
+            <div class="footer-content">
+                <div class="footer-column footer-promo">
+                    <p>Пригласи друга — и вы оба в выигрыше!<br>
+                    Создайте персональный промокод за секунды:<br>
+                    — Нажми «Сгенерировать код»<br>
+                    — Скопируй<br>
+                    — Отправь другу</p>
+                    <button class="promo-btn" onclick="generateCode()">СГЕНЕРИРОВАТЬ</button>
+                    <div class="promo-result" id="code-box">PROMO-READY</div>
+                </div>
+                <div class="footer-column footer-extra">
+                    <p>Настоящий пар, веник на заказ и уют без суеты.<br>  
+                        Отдых без спешки, жар по классике. <br>   
+                        SAURA — ваша личная сауна в центре Архангельска.</p>
+                    <div class="social-icons">
+                        <div class="social-circle">VK</div>
+                        <div class="social-circle">TG</div>
+                        <div class="social-circle">IG</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
