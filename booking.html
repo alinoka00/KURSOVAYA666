@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование — SAURA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="booking-hero">
+        <nav class="navbar">
+            <div class="logo">SAURA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">ГЛАВНАЯ</a></li>
+                <li><a href="services.html">УСЛУГИ И ЦЕНЫ</a></li>
+                <li><a href="gallery.html">ФОТОГАЛЕРЕЯ</a></li>
+                <li><a href="booking.html" style="color: var(--gold);">БРОНИРОВАНИЕ</a></li>
+                <li><a href="dev.html">DEV</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleModal(true)">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+
+        <h1>Reservations</h1>
+
+        <div></div> 
+    </header>
+
+    <section class="booking-section">
+        <form class="booking-form" id="booking-form" action="#">
+            <div class="form-group">
+                <label>Ваше имя</label>
+                <input type="text" class="form-input" placeholder="Введите имя" required>
+            </div>
+            <div class="form-group">
+                <label>Телефон</label>
+                <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-input" placeholder="example@mail.ru" required>
+            </div>
+            <div class="form-group" style="position: relative;">
+                <label>Дата посещения</label>
+                <input type="date" class="form-input" id="booking-date" required>
+            </div>
+            <div class="form-group">
+                <label>Время</label>
+                <input type="time" class="form-input" id="booking-time" required>
+            </div>
+            <div class="form-group">
+                <label>Услуга</label>
+                <select class="form-input" required>
+                    <option value="" disabled selected>Выберите услугу</option>
+                    <option value="sauna">Аренда сауны (1 час)</option>
+                    <option value="sauna2">Аренда сауны (2 часа)</option>
+                    <option value="massage">Массаж (30 минут)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Количество человек</label>
+                <input type="number" class="form-input" min="1" max="15" placeholder="1">
+            </div>
+            <div class="form-group">
+                <label>Дополнительные пожелания</label>
+                <textarea class="form-input" placeholder="Ваши пожелания..."></textarea>
+            </div>
+
+            <div class="booking-actions">
+                <button type="submit" class="btn-booking">ЗАБРОНИРОВАТЬ</button>
+                <div class="progress-track" id="booking-progress-track">
+                    <div class="progress-fill" id="booking-progress-fill"></div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <div class="modal-overlay" id="contacts-modal" onclick="if(event.target === this) toggleModal(false)">
+        <div class="modal-container">
+            <button class="modal-close" onclick="toggleModal(false)">&times;</button>
+            <div class="modal-header">
+                <h2>CONTACTS</h2>
+            </div>
+            <div class="modal-info">
+                <div class="info-item">
+                    <h3>Адрес</h3>
+                    <p>г. Архангельск, ул. Урицкого, 54, корп. 2, этаж цокольный</p>
+                </div>
+                <div class="info-item">
+                    <h3>Телефон</h3>
+                    <p>+7 (8182) 44-55-66</p>
+                </div>
+                <div class="info-item">
+                    <h3>Режим работы</h3>
+                    <p>24/7 (Круглосуточно)</p>
+                </div>
+                <div class="info-item">
+                    <h3>Соцсети</h3>
+                    <p>VK: @saura_arh<br>TG: @saura_bot</p>
+                </div>
+                </div>
+        </div>  
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <p class="copyright">© 2026 SAURA. Все права защищены</p>
+        </div>
+        <div class="footer-main">
+            <img src="footer.png" class="footer-leaf" alt="Decoration">
+            <div class="footer-content">
+                <div class="footer-column footer-promo">
+                    <p>Пригласи друга — и вы оба в выигрыше!<br>
+                    Создайте персональный промокод за секунды:<br>
+                    — Нажми «Сгенерировать код»<br>
+                    — Скопируй<br>
+                    — Отправь другу</p>
+                    <button class="promo-btn" onclick="generateCode()">СГЕНЕРИРОВАТЬ</button>
+                    <div class="promo-result" id="code-box">PROMO-READY</div>
+                </div>
+                <div class="footer-column footer-extra">
+                    <p>Настоящий пар, веник на заказ и уют без суеты.<br>  
+                        Отдых без спешки, жар по классике. <br>   
+                        SAURA — ваша личная сауна в центре Архангельска.</p>
+                    <div class="social-icons">
+                        <div class="social-circle">VK</div>
+                        <div class="social-circle">TG</div>
+                        <div class="social-circle">IG</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
