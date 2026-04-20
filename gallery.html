@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотогалерея — SAURA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="gallery-hero">
+        <nav class="navbar">
+            <div class="logo">SAURA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">ГЛАВНАЯ</a></li>
+                <li><a href="services.html">УСЛУГИ И ЦЕНЫ</a></li>
+                <li><a href="gallery.html" style="color: var(--gold);">ФОТОГАЛЕРЕЯ</a></li>
+                <li><a href="booking.html">БРОНИРОВАНИЕ</a></li>
+                <li><a href="dev.html">DEV</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleModal(true)">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+
+        <h1>GALLERY</h1>
+        <div></div> <!-- Spacer -->
+    </header>
+
+    <section class="gallery-content">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="1.jpg" alt="Sauna 1">
+            </div>
+            <div class="gallery-item">
+                <img src="2.jpg" alt="Sauna 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop" alt="Sauna 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Sauna 4">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal: Контакты -->
+    <div class="modal-overlay" id="contacts-modal" onclick="if(event.target === this) toggleModal(false)">
+        <div class="modal-container">
+            <button class="modal-close" onclick="toggleModal(false)">&times;</button>
+            <div class="modal-header">
+                <h2>CONTACTS</h2>
+            </div>
+            <div class="modal-info">
+                <div class="info-item">
+                    <h3>Адрес</h3>
+                    <p>г. Архангельск, ул. Урицкого, 54, корп. 2, этаж цокольный</p>
+                </div>
+                <div class="info-item">
+                    <h3>Телефон</h3>
+                    <p>+7 (8182) 44-55-66</p>
+                </div>
+                <div class="info-item">
+                    <h3>Режим работы</h3>
+                    <p>24/7 (Круглосуточно)</p>
+                </div>
+                <div class="info-item">
+                    <h3>Соцсети</h3>
+                    <p>VK: @saura_arh<br>TG: @saura_bot</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <p class="copyright">© 2026 SAURA. Все права защищены</p>
+        </div>
+        <div class="footer-main">
+            <img src="footer.png" class="footer-leaf" alt="Decoration">
+            <div class="footer-content">
+                <div class="footer-column footer-promo">
+                    <p>Пригласи друга — и вы оба в выигрыше!<br>
+                    Создайте персональный промокод за секунды:<br>
+                    — Нажми «Сгенерировать код»<br>
+                    — Скопируй<br>
+                    — Отправь другу</p>
+                    <button class="promo-btn" onclick="generateCode()">СГЕНЕРИРОВАТЬ</button>
+                    <div class="promo-result" id="code-box">PROMO-READY</div>
+                </div>
+                <div class="footer-column footer-extra">
+                    <p>Настоящий пар, веник на заказ и уют без суеты.<br>  
+                        Отдых без спешки, жар по классике. <br>   
+                        SAURA — ваша личная сауна в центре Архангельска.</p>
+                    <div class="social-icons">
+                        <div class="social-circle">VK</div>
+                        <div class="social-circle">TG</div>
+                        <div class="social-circle">IG</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="interactive-bg-layer"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
